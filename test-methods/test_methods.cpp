@@ -10,6 +10,7 @@
 #include <fstream>
 #include "Methods/AdaMax/AdaMax.h"
 #include "Methods/Adam/Adam.h"
+#include "Methods/Adam/AdamW.h"
 #include "Methods/AMSGrad/AMSGrad.h"
 #include "Methods/Adagrad/Adagrad.h"
 #include "Methods/Adadelta/Adadelta.h"
@@ -1610,6 +1611,14 @@ int main() {
     Test(Adam);
     fout_txt.close();
 
+	std::cout << std::endl;
+    std::cout << "-- Start AdamW Method Tests. Results in AdamW.txt" << std::endl;
+    std::cout << "-- Tests: ";
+    fout_txt.open("test_AdamW.txt");
+    fout_txt << "AdamW method:\n\n";
+    Test(Adam);
+    fout_txt.close();
+	
     std::cout << std::endl;
     std::cout << "-- Start AMSGrad Method Tests. Results in AMSGrad.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1664,6 +1673,7 @@ int main() {
     std::cout << "\t * test_nesterov.txt\n";
     std::cout << "\t * test_AdaMax.txt\n";
     std::cout << "\t * test_Adam.txt\n";
+	std::cout << "\t * test_AdamW.txt\n";
     std::cout << "\t * test_AMSGrad.txt\n";
     std::cout << "\t * test_Adagrad.txt\n";
     std::cout << "\t * test_Adadelta.txt\n";
